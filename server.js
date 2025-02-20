@@ -25,6 +25,11 @@ admin.initializeApp({
 
 const db = admin.firestore();
 
+// ✅ Root Route (Fix for "Cannot GET /")
+app.get("/", (req, res) => {
+    res.send("🚀 Referral Tracking System is Live!");
+});
+
 // ✅ User Registration & Login
 app.post("/register", async (req, res) => {
   try {
